@@ -3,7 +3,7 @@ CC      := clang
 CFLAGS  := -Wall -Wextra -Werror
 
 # ===== Target programs =====
-BINS    := Colleen Grace
+BINS    := Colleen Grace Sully
 
 .PHONY: all clean fclean re
 
