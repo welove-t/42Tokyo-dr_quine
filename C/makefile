@@ -1,20 +1,24 @@
 # ==== Config ====
 CC      := clang
 CFLAGS  := -Wall -Wextra -Werror
-NAME    := Colleen
 
-# ==== Rules ====
-all: $(NAME)
+# ===== Target programs =====
+BINS    := Colleen Grace
 
-$(NAME): $(NAME).c
+.PHONY: all clean fclean re
+
+# ===== Default rule =====
+all: $(BINS)
+
+# ===== Generic build rule =====
+%: %.c
 	$(CC) $(CFLAGS) -o $@ $<
 
+# ===== Clean rules =====
 clean:
 	@echo "nothing to clean"
 
 fclean:
-	$(RM) $(NAME)
+	$(RM) $(BINS) Grace_kid.c tmp_Colleen
 
 re: fclean all
-
-.PHONY: all clean fclean re
